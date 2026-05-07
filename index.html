@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prasanth Padmanabhan Menon — AI-Native Product Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f0f0f;
+      --ink-secondary: #5a5a5a;
+      --ink-tertiary: #a8a8a8;
+      --bg: #f8f6f2;
+      --bg-surface: #ffffff;
+      --accent: #c8622a;
+      --accent-light: #f0e6de;
+      --rule: #e2ddd8;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --max: 1100px;
+      --gutter: clamp(1.5rem, 5vw, 4rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── LAYOUT ─── */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    section { padding: 5rem 0; }
+    section + section { border-top: 1px solid var(--rule); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 246, 242, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    nav .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    nav .logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    /* ─── HERO ─── */
+    #hero {
+      padding: 7rem 0 5rem;
+      border-top: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      color: var(--ink-secondary);
+      max-width: 55ch;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-title strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--ink);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      border: 1.5px solid var(--ink);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      border: 1.5px solid var(--rule);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--ink);
+      color: var(--accent);
+    }
+
+    .hero-photo-wrap {
+      width: clamp(160px, 16vw, 220px);
+      aspect-ratio: 1;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      background: var(--accent-light);
+      flex-shrink: 0;
+    }
+
+    .hero-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .photo-placeholder svg { opacity: 0.4; }
+
+    /* ─── IMPACT NUMBERS ─── */
+    #impact { background: var(--bg-surface); }
+
+    .impact-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      color: var(--ink);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      border: 1px solid var(--rule);
+    }
+
+    .stat-cell {
+      padding: 2rem 1.5rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .stat-cell:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-secondary);
+      line-height: 1.4;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .highlight-card {
+      padding: 1.75rem;
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .highlight-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--accent);
+    }
+
+    .highlight-card h4 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+
+    .highlight-card p {
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+    }
+
+    /* ─── CAREER ─── */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-tertiary);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      color: var(--ink);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0.4rem; left: 0;
+      width: 1px;
+      height: calc(100% - 1rem);
+      background: var(--rule);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3.5rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 0.45rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 1.5px solid var(--accent);
+      transform: translateX(-3.5px);
+    }
+
+    .tl-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .tl-role {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .tl-company {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .tl-period {
+      font-size: 0.78rem;
+      color: var(--ink-tertiary);
+      margin-left: auto;
+    }
+
+    .tl-bullets {
+      list-style: none;
+      margin-top: 0.75rem;
+    }
+
+    .tl-bullets li {
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+      line-height: 1.65;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+
+    .tl-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--ink-tertiary);
+      font-size: 0.75rem;
+      top: 0.1rem;
+    }
+
+    .tl-bullets li strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* ─── SKILLS ─── */
+    #skills { background: var(--bg-surface); }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .skill-group h4 {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-tertiary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      color: var(--ink-secondary);
+      letter-spacing: 0.01em;
+    }
+
+    .tag.featured {
+      background: var(--accent-light);
+      border-color: #d89070;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ─── CLAUDE CODE / AGENTIC ─── */
+    #agentic {
+      background: var(--ink);
+      color: #f8f6f2;
+    }
+
+    #agentic .section-label { color: rgba(248,246,242,0.4); }
+
+    #agentic .section-heading { color: #f8f6f2; }
+
+    .agentic-intro {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      font-weight: 300;
+      color: rgba(248,246,242,0.75);
+      max-width: 65ch;
+      line-height: 1.75;
+      margin-bottom: 3.5rem;
+    }
+
+    .agentic-intro strong { color: #f8f6f2; font-weight: 500; }
+
+    .agentic-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      margin-bottom: 3rem;
+    }
+
+    .agentic-stat {
+      background: var(--ink);
+      padding: 1.75rem 1.5rem;
+    }
+
+    .agentic-stat-num {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .agentic-stat-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(248,246,242,0.5);
+      line-height: 1.4;
+    }
+
+    .workflow-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .workflow-item {
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      transition: border-color 0.2s;
+    }
+
+    .workflow-item:hover { border-color: rgba(200,98,42,0.5); }
+
+    .workflow-item h4 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #f8f6f2;
+      margin-bottom: 0.4rem;
+    }
+
+    .workflow-item p {
+      font-size: 0.8rem;
+      color: rgba(248,246,242,0.55);
+      line-height: 1.6;
+    }
+
+    .workflow-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(200,98,42,0.15);
+      padding: 0.2rem 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ─── BLOGS ─── */
+    .blogs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      display: block;
+      padding: 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--rule);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .blog-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .blog-card-meta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-date {
+      font-size: 0.72rem;
+      color: var(--ink-tertiary);
+      letter-spacing: 0.04em;
+    }
+
+    .blog-views {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+    }
+
+    .blog-card h4 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      line-height: 1.4;
+      color: var(--ink);
+      margin-bottom: 0;
+    }
+
+    .blogs-total {
+      margin-top: 2rem;
+      padding: 1rem 1.5rem;
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+    }
+
+    .blogs-total strong { color: var(--ink); }
+
+    /* ─── CERTIFICATIONS ─── */
+    #certs { background: var(--bg-surface); }
+
+    .certs-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    @media (max-width: 680px) { .certs-layout { grid-template-columns: 1fr; } }
+
+    .cert-list { list-style: none; }
+
+    .cert-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+    }
+
+    .cert-list li:last-child { border-bottom: none; }
+
+    .cert-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .cert-name {
+      font-weight: 500;
+      color: var(--ink);
+      display: block;
+      font-size: 0.875rem;
+    }
+
+    .patent-card {
+      padding: 1.5rem;
+      border: 1px solid var(--rule);
+      background: var(--bg);
+    }
+
+    .patent-card h4 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .patent-card p {
+      font-size: 0.8rem;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+    }
+
+    .patent-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.25rem 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--bg-surface); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 680px) { .contact-layout { grid-template-columns: 1fr; } }
+
+    .contact-blurb {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--ink-secondary);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .contact-blurb strong { font-weight: 500; color: var(--ink); }
+
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--ink-secondary);
+      font-size: 0.875rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--rule);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .contact-link svg { flex-shrink: 0; color: var(--accent); }
+
+    .education-block { margin-top: 2.5rem; }
+
+    .education-block h4 {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-tertiary);
+      margin-bottom: 1rem;
+    }
+
+    .edu-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .edu-year {
+      font-size: 0.75rem;
+      color: var(--ink-tertiary);
+      min-width: 4rem;
+      padding-top: 0.1rem;
+    }
+
+    .edu-detail strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .edu-detail span {
+      font-size: 0.8rem;
+      color: var(--ink-secondary);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--rule);
+      background: var(--bg);
+    }
+
+    footer .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      font-size: 0.78rem;
+      color: var(--ink-tertiary);
+    }
+
+    footer a { color: var(--ink-secondary); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-photo-wrap { width: 120px; margin-bottom: 1.5rem; order: -1; }
+      .tl-period { margin-left: 0; }
+    }
+
+    @media (max-width: 520px) {
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="inner">
+      <a href="#hero" class="logo">PPM</a>
+      <ul>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#career">Career</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#agentic">AI Tools</a></li>
+        <li><a href="#blogs">Writing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <p class="hero-eyebrow">AI-Native Product Leader · SAP Cloud · BTP · ABAP</p>
+          <h1 class="hero-name">Prasanth<br/>Padmanabhan<br/>Menon</h1>
+          <p class="hero-title">
+            13+ years building enterprise software at SAP — from hands-on ABAP development
+            to <strong>Product Ownership of S/4HANA Cloud's release intelligence product</strong>,
+            now fully leaning into <strong>AI-native workflows</strong> and agentic tooling
+            to ship 10× faster.
+          </p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+              Get in touch
+            </a>
+            <a href="#blogs" class="btn-secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Read my writing
+            </a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <div class="photo-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            Add your photo
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section id="impact">
+    <div class="container">
+      <p class="section-label fade-in">By the numbers</p>
+      <h2 class="impact-heading fade-in">Measurable outcomes<br/>at every stage.</h2>
+      <div class="stats-grid fade-in">
+        <div class="stat-cell">
+          <div class="stat-number">13+</div>
+          <div class="stat-label">Years in enterprise software</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">120%</div>
+          <div class="stat-label">Product adoption increase (S/4HANA Cloud)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Features shipped in 15 months</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Customer demos delivered</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">127K</div>
+          <div class="stat-label">Views on SAP Community blog posts</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">1</div>
+          <div class="stat-label">Granted US patent (AI/RPA)</div>
+        </div>
+      </div>
+
+      <div class="highlights-grid">
+        <div class="highlight-card fade-in">
+          <h4>AI-powered Release Intelligence</h4>
+          <p>Product Owner for Release Assessment & Scope Dependency — SAP's update intelligence tool for SaaS ERP customers. Built and shipped a Gen AI assistant (RAG-based) currently in A/B testing for wider release.</p>
+        </div>
+        <div class="highlight-card fade-in">
+          <h4>US Patent — Dynamic API Bot for RPA</h4>
+          <p>Patent #17/381,805 granted July 2023. Covers a dynamic API discovery mechanism for robotic process automation bots, reducing manual integration configuration.</p>
+        </div>
+        <div class="highlight-card fade-in">
+          <h4>OKR Coach & Community Author</h4>
+          <p>Certified OKR coach at SAP. Published 19 technical blog posts read by 127,000+ SAP practitioners worldwide, covering extensibility, BTP integration, and AI tooling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER -->
+  <section id="career">
+    <div class="container">
+      <p class="section-label">Professional journey</p>
+      <h2 class="section-heading">Career timeline</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="tl-meta">
+            <span class="tl-role">Product Owner</span>
+            <span class="tl-company">SAP Labs India</span>
+            <span class="tl-period">Nov 2023 – Present</span>
+          </div>
+          <ul class="tl-bullets">
+            <li>Full lifecycle ownership of <strong>Release Assessment & Scope Dependency</strong> — SAP's SaaS ERP update intelligence product for S/4HANA Cloud Public Edition customers.</li>
+            <li>Drove <strong>~120% adoption growth</strong> through 50+ customer demos, UX improvements in Figma, and 15+ new features shipped in 15 months.</li>
+            <li>Built and shipped a <strong>Gen AI assistant (RAG on SAP AI Core)</strong> currently under A/B testing, with plans for broader internal rollout.</li>
+            <li>Led data-driven adoption analysis via Qualtrics; maintained direct customer relationships and internal/external stakeholder management.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-meta">
+            <span class="tl-role">Product Expert</span>
+            <span class="tl-company">SAP Labs India</span>
+            <span class="tl-period">Jun 2020 – Nov 2023</span>
+          </div>
+          <ul class="tl-bullets">
+            <li>Customer Advocate for <strong>SAP S/4HANA Cloud extensibility</strong> — led 25+ demos across Key User, Developer (RAP/ABAP), and BTP side-by-side extensibility.</li>
+            <li>Built and demo'd <strong>SAP Intelligent RPA bots</strong> (cloud & desktop studio) — converting prospects to customers across mid-market sales.</li>
+            <li>Authored well-received SAP Community content reaching 100,000+ views; actively resolved community queries to improve product NPS.</li>
+            <li>Designed and led <strong>Two-Tier ERP integration</strong> implementations using SAP Cloud Integration between on-premise and cloud systems.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-meta">
+            <span class="tl-role">Scrum Master / Senior Developer</span>
+            <span class="tl-company">SAP Labs India</span>
+            <span class="tl-period">Aug 2016 – Jun 2020</span>
+          </div>
+          <ul class="tl-bullets">
+            <li>Lead developer for <strong>Job Monitoring, BI Monitoring, and Rapid Content Delivery</strong> tools in SAP Solution Manager.</li>
+            <li>Designed OO ABAP architecture, Webdynpro UIs, and OData services for complex enterprise monitoring products.</li>
+            <li>Proactively resolved customer tickets across a large global install base over 4 years.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-meta">
+            <span class="tl-role">Technology Consultant</span>
+            <span class="tl-company">EXA-AG (Contract at SAP)</span>
+            <span class="tl-period">Jul 2014 – Jul 2016</span>
+          </div>
+          <ul class="tl-bullets">
+            <li>Support and development of <strong>SAP Multi Resource Scheduling</strong> — integrated resource planning across Project Systems and HR modules.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="tl-meta">
+            <span class="tl-role">ABAP Consultant</span>
+            <span class="tl-company">Brillio</span>
+            <span class="tl-period">May 2012 – Jul 2014</span>
+          </div>
+          <ul class="tl-bullets">
+            <li>Progressed from trainee to full ABAP consultant; delivered WRICEF objects for 5+ clients, gaining early hands-on expertise in OO ABAP, Webdynpro, and SAP Workflow.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <p class="section-label fade-in">Capabilities</p>
+      <h2 class="section-heading fade-in">Skills & expertise</h2>
+      <div class="skills-layout">
+        <div class="skill-group fade-in">
+          <h4>Product &amp; Strategy</h4>
+          <div class="tags">
+            <span class="tag featured">Product Ownership</span>
+            <span class="tag featured">Product Roadmap</span>
+            <span class="tag">Agile / Scrum</span>
+            <span class="tag">OKR Coaching</span>
+            <span class="tag">Stakeholder Mgmt</span>
+            <span class="tag">UX Design (Figma)</span>
+            <span class="tag">Jira</span>
+            <span class="tag">Qualtrics</span>
+            <span class="tag">Miro / Mural</span>
+          </div>
+        </div>
+        <div class="skill-group fade-in">
+          <h4>SAP Platform</h4>
+          <div class="tags">
+            <span class="tag featured">SAP S/4HANA Cloud</span>
+            <span class="tag featured">SAP BTP</span>
+            <span class="tag">RAP (Restful ABAP)</span>
+            <span class="tag">Key User Extensibility</span>
+            <span class="tag">SAP AI Core</span>
+            <span class="tag">SAP Cloud Integration</span>
+            <span class="tag">SAP Process Automation</span>
+            <span class="tag">OO ABAP</span>
+            <span class="tag">Webdynpro</span>
+          </div>
+        </div>
+        <div class="skill-group fade-in">
+          <h4>AI &amp; Development</h4>
+          <div class="tags">
+            <span class="tag featured">LLM APIs &amp; Prompt Engineering</span>
+            <span class="tag featured">RAG &amp; Vector DBs</span>
+            <span class="tag">Claude Code (Expert)</span>
+            <span class="tag">Agentic Coding Tools</span>
+            <span class="tag">Ollama / HuggingFace</span>
+            <span class="tag">SAP AI Launchpad</span>
+            <span class="tag">Replit / Lovable / Bolt</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="skill-group fade-in">
+          <h4>Languages &amp; Certs</h4>
+          <div class="tags">
+            <span class="tag featured">CSPO (Scrum PO)</span>
+            <span class="tag featured">SAP BTP Solution Architect</span>
+            <span class="tag">Perplexity AI Business Fellow</span>
+            <span class="tag">English — IELTS C1 (8/9)</span>
+            <span class="tag">IIIT Bangalore — Exec PG AI/ML</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTIC / CLAUDE CODE -->
+  <section id="agentic">
+    <div class="container">
+      <p class="section-label">AI-native workflows</p>
+      <h2 class="section-heading">Agentic coding<br/>proficiency</h2>
+      <p class="agentic-intro">
+        I don't just use AI tools — I <strong>build with them as infrastructure</strong>.
+        Using Claude Code as an orchestration layer across 68 sessions, I've developed repeatable
+        multi-agent pipelines for compliance analysis, competitive research, and web deployments —
+        treating the AI as a <strong>junior engineering team that ships autonomously</strong>.
+      </p>
+
+      <div class="agentic-stats">
+        <div class="agentic-stat">
+          <div class="agentic-stat-num">68</div>
+          <div class="agentic-stat-label">Claude Code sessions</div>
+        </div>
+        <div class="agentic-stat">
+          <div class="agentic-stat-num">649</div>
+          <div class="agentic-stat-label">Directed messages</div>
+        </div>
+        <div class="agentic-stat">
+          <div class="agentic-stat-num">94K+</div>
+          <div class="agentic-stat-label">ATC findings processed<br/>in one session</div>
+        </div>
+        <div class="agentic-stat">
+          <div class="agentic-stat-num">38</div>
+          <div class="agentic-stat-label">Git commits shipped</div>
+        </div>
+        <div class="agentic-stat">
+          <div class="agentic-stat-num">228</div>
+          <div class="agentic-stat-label">Files created/modified</div>
+        </div>
+      </div>
+
+      <div class="workflow-list">
+        <div class="workflow-item">
+          <div class="workflow-badge">MCP + Multi-agent</div>
+          <h4>SAP Clean Core Compliance Reports</h4>
+          <p>Automated pipeline: ATC Excel → MCP classification → successor lookups → markdown report with scoring, object classification, and remediation guidance.</p>
+        </div>
+        <div class="workflow-item">
+          <div class="workflow-badge">Parallel agents</div>
+          <h4>Competitive Intelligence Automation</h4>
+          <p>Multi-phase research workflows with parallel sub-agents — gather, synthesize, generate styled HTML slide decks — all from a single high-level directive.</p>
+        </div>
+        <div class="workflow-item">
+          <div class="workflow-badge">Skill ecosystem</div>
+          <h4>Custom Skill Development</h4>
+          <p>Built and maintains a suite of reusable Claude Code skills (compliance, competition analysis, skill-creator) as infrastructure for repeatable analytical work.</p>
+        </div>
+        <div class="workflow-item">
+          <div class="workflow-badge">Web deployment</div>
+          <h4>End-to-End Web Deliverables</h4>
+          <p>Built and deployed multiple interactive sites (GitHub Pages), handling full dev cycles including iterative UI refinement, directory management, and cross-org repo transfers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOGS -->
+  <section id="blogs">
+    <div class="container">
+      <p class="section-label fade-in">Published writing</p>
+      <h2 class="section-heading fade-in">SAP Community — 127K+ total views</h2>
+
+      <div class="blogs-grid">
+        <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/extensibility-in-sap-s-4hana-cloud/ba-p/13526826" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">Sep 2022</span>
+            <span class="blog-views">16,984 views</span>
+          </div>
+          <h4>Extensibility in SAP S/4HANA Cloud</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/how-to-use-a-rest-api-to-post-data-into-sap-s-4hana-cloud-using-sap/ba-p/13515417" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">Apr 2021</span>
+            <span class="blog-views">12,413 views</span>
+          </div>
+          <h4>How to use a REST API to post data into SAP S/4HANA Cloud using SAP Intelligent RPA</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/key-user-extensibility-create-a-custom-code-list-with-a-custom-cds-view-in/ba-p/13511282" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">Oct 2021</span>
+            <span class="blog-views">11,973 views</span>
+          </div>
+          <h4>Key User Extensibility: Create a Custom Code List with a Custom CDS View</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/simple-application-to-convert-number-to-words-in-sap-s-4hana-cloud/ba-p/13473950" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">Jul 2020</span>
+            <span class="blog-views">10,773 views</span>
+          </div>
+          <h4>Simple application to convert number to words in SAP S/4HANA Cloud</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/release-assessment-and-scope-dependency-for-sap-s-4hana-cloud-public/ba-p/13652341" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">Apr 2024</span>
+            <span class="blog-views">10,385 views</span>
+          </div>
+          <h4>Release Assessment and Scope Dependency for SAP S/4HANA Cloud Public Edition</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/extensibility-in-the-sap-s-4hana-cloud-extended-edition/ba-p/13465336" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">Feb 2021</span>
+            <span class="blog-views">8,666 views</span>
+          </div>
+          <h4>Extensibility in the SAP S/4HANA Cloud, extended edition</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/setting-up-an-import-connection-setup-between-sap-s-4hana-cloud-and-sap/ba-p/13469513" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">Dec 2020</span>
+            <span class="blog-views">8,252 views</span>
+          </div>
+          <h4>Setting up an Import Connection between SAP S/4HANA Cloud and SAP S/4HANA</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/release-assessment-and-scope-dependency-for-sap-s-4hana-cloud-public/ba-p/13981091" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">Jan 2025</span>
+            <span class="blog-views">4,740 views</span>
+          </div>
+          <h4>Release Assessment and Scope Dependency — 2025 edition</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/replicate-documents-from-sap-s-4hana-to-sap-s-4hana-cloud-via-sap-btp-event/ba-p/13566416" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">May 2023</span>
+            <span class="blog-views">4,635 views</span>
+          </div>
+          <h4>Replicate documents from SAP S/4HANA to S/4HANA Cloud via SAP BTP Event Mesh</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/release-assessment-and-scope-dependency-for-sap-s-4hana-cloud-public/ba-p/13915157" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">Oct 2024</span>
+            <span class="blog-views">1,146 views</span>
+          </div>
+          <h4>Release Assessment and Scope Dependency — Cloud Public Edition (Oct 2024)</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/object-release-state-in-cloudification-repository-viewer-for-clean-core/ba-p/14350668" target="_blank" rel="noopener" class="blog-card fade-in">
+          <div class="blog-card-meta">
+            <span class="blog-date">Mar 2026</span>
+            <span class="blog-views">1,052 views</span>
+          </div>
+          <h4>Object Release State in Cloudification Repository Viewer for Clean Core Extensibility</h4>
+        </a>
+
+        <a href="https://community.sap.com/t5/user/viewprofilepage/user-id/824" target="_blank" rel="noopener" class="blog-card fade-in" style="border-style: dashed;">
+          <div class="blog-card-meta">
+            <span class="blog-views">+8 more posts</span>
+          </div>
+          <h4>View all 19 posts on SAP Community →</h4>
+        </a>
+      </div>
+
+      <div class="blogs-total fade-in">
+        <strong>19 published articles</strong> · 127,173 combined views · Topics: S/4HANA Cloud extensibility, SAP BTP, Intelligent RPA, Clean Core, AI tooling
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTS & PATENT -->
+  <section id="certs">
+    <div class="container">
+      <p class="section-label fade-in">Credentials</p>
+      <h2 class="section-heading fade-in">Certifications &amp; Patent</h2>
+      <div class="certs-layout">
+        <div class="fade-in">
+          <h3 style="font-family: var(--serif); font-size: 1.1rem; margin-bottom: 1rem; color: var(--ink);">Certifications</h3>
+          <ul class="cert-list">
+            <li>
+              <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <div>
+                <span class="cert-name">Certified Scrum Product Owner (CSPO)</span>
+                Scrum Alliance
+              </div>
+            </li>
+            <li>
+              <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <div>
+                <span class="cert-name">Solution Architect: SAP BTP</span>
+                SAP · Credly Verified
+              </div>
+            </li>
+            <li>
+              <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <div>
+                <span class="cert-name">Perplexity AI Business Fellowship</span>
+                Batch 1 · Perplexity AI
+              </div>
+            </li>
+            <li>
+              <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <div>
+                <span class="cert-name">Executive PG — AI/ML</span>
+                IIIT Bangalore · 2025–present
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="fade-in">
+          <h3 style="font-family: var(--serif); font-size: 1.1rem; margin-bottom: 1rem; color: var(--ink);">US Patent</h3>
+          <div class="patent-card">
+            <div class="patent-badge">US Patent · Granted Jul 2023</div>
+            <h4>Dynamic API Bot for Robotic Process Automation</h4>
+            <p>Patent No. 17/381,805 · Filed: 21 July 2021 · Granted: 18 July 2023<br/><br/>
+            Covers a dynamic API discovery mechanism that enables RPA bots to automatically resolve and consume APIs at runtime, reducing integration configuration overhead in robotic process automation workflows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label fade-in">Let's connect</p>
+      <h2 class="section-heading fade-in">Get in touch</h2>
+      <div class="contact-layout">
+        <div class="fade-in">
+          <p class="contact-blurb">
+            I'm open to conversations about <strong>AI-native product roles</strong>,
+            <strong>SAP ecosystem opportunities</strong>, advisory projects, and
+            <strong>speaking on agentic AI workflows</strong>.
+            Based in Bangalore, India.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:pra_santh@outlook.com" class="contact-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+              pra_santh@outlook.com
+            </a>
+            <a href="https://www.linkedin.com/in/prasanth-padmanabhan-menon" target="_blank" rel="noopener" class="contact-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              linkedin.com/in/prasanth-padmanabhan-menon
+            </a>
+            <a href="https://community.sap.com/t5/user/viewprofilepage/user-id/824" target="_blank" rel="noopener" class="contact-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              SAP Community Profile
+            </a>
+            <a href="tel:+919686810847" class="contact-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 5.83 5.83l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +91 96868 10847
+            </a>
+          </div>
+        </div>
+        <div class="fade-in">
+          <div class="education-block">
+            <h4>Education</h4>
+            <div class="edu-item">
+              <span class="edu-year">2025–</span>
+              <div class="edu-detail">
+                <strong>Executive PG — Artificial Intelligence &amp; Machine Learning</strong>
+                <span>IIIT Bangalore</span>
+              </div>
+            </div>
+            <div class="edu-item">
+              <span class="edu-year">2007–2011</span>
+              <div class="edu-detail">
+                <strong>Bachelor of Engineering</strong>
+                <span>Karpaga Vinayaka College of Engineering &amp; Technology<br/>Anna University, Chennai</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 2rem; padding: 1.25rem; border: 1px solid var(--rule); background: var(--bg);">
+            <p style="font-size:0.8rem; color: var(--ink-secondary); line-height:1.6;">
+              <strong style="color:var(--ink); font-size:0.82rem;">Language</strong><br/>
+              English — IELTS Band 8.0 (CEFR Level C1)<br/>
+              Malayalam — Native
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="inner">
+      <p>© 2026 Prasanth Padmanabhan Menon</p>
+      <p>Built with <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a> · Bangalore, India</p>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in, .timeline-item').forEach(el => observer.observe(el));
+
+    // Nav active state
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.style.color = link.getAttribute('href') === `#${id}`
+              ? 'var(--accent)'
+              : '';
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(s => navObserver.observe(s));
+  </script>
+</body>
+</html>
