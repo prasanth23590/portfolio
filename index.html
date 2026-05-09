@@ -174,7 +174,7 @@
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(3,1fr);
       border: 1px solid var(--rule);
     }
     .stat-cell {
@@ -184,9 +184,9 @@
       position: relative; overflow: hidden;
     }
     .stat-cell:last-child { border-right: none; }
-    .stat-cell:nth-child(n+5) { border-top: 1px solid var(--rule); }
+    .stat-cell:nth-child(n+4) { border-top: 1px solid var(--rule); }
     .stat-cell:hover { background: var(--bg-raised); }
-    .stat-cell:nth-child(4n) { border-right: none; }
+    .stat-cell:nth-child(3n) { border-right: none; }
     .stat-n {
       font-family: var(--serif);
       font-size: clamp(2rem, 3.5vw, 3rem);
@@ -537,20 +537,12 @@
         <div class="stat-l">Customer demos delivered</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-n">94K+</div>
-        <div class="stat-l">Peak compliance findings automated in a single session</div>
-      </div>
-      <div class="stat-cell">
         <div class="stat-n">127K</div>
         <div class="stat-l">SAP Community views</div>
       </div>
       <div class="stat-cell">
         <div class="stat-n">19</div>
         <div class="stat-l">Published blog posts</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-n">1</div>
-        <div class="stat-l">Granted US patent</div>
       </div>
     </div>
   </div>
