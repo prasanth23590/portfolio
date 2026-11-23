@@ -21,12 +21,13 @@ git add -A && git commit -m "..." && git push origin main
 
 Single `index.html` — no build step, no framework, no dependencies except Google Fonts CDN.
 
-- **Design tokens**: CSS custom properties in `:root` (colors, fonts, spacing)
-- **Fonts**: DM Serif Display (headings) + DM Sans (body) via Google Fonts
-- **Palette**: `--bg: #f8f6f2`, `--ink: #0f0f0f`, `--accent: #c8622a` (terracotta)
-- **Sections** (in order): nav → hero → #impact → #career → #skills → #agentic → #blogs → #certs → #contact → footer
-- **Animations**: IntersectionObserver drives `.fade-in` → `.visible` and `.timeline-item` → `.visible` on scroll
-- **Photo**: placeholder `<div class="photo-placeholder">` inside `.hero-photo-wrap` — replace with `<img>` pointing to photo file
+- **Design tokens**: CSS custom properties in `:root` (colors, fonts, radii)
+- **Fonts**: Bricolage Grotesque (display) + Public Sans (body) via Google Fonts
+- **Palette**: `--paper: #ECEFF3` (cool grey), `--ink: #0E1B2C` (navy), `--cobalt: #2348D6` (accent), `--shipped: #177245` (used only for "Now" / shipped markers). Avoid cream + terracotta + serif: it reads as AI-generated.
+- **Sections** (in order): nav → hero (name, portrait, now/studying strip) → #agents (AI coding and PM work) → #education (full cobalt block) → #releases (career as versioned release notes) → #writing (posts with view bars) → #skills → #contact → footer
+- **Motion**: one CSS load animation on the hero only, disabled under `prefers-reduced-motion`. No scroll-triggered fades, no JS.
+- **Photo**: `photo.jpeg` in `.portrait`
+- **Writing bars**: `.bar span` widths are each post's views as a % of the top post (16,984)
 
 ## Rules
 
