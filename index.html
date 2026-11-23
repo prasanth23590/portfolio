@@ -62,12 +62,9 @@
     .hero nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
     .photo {
-      position: absolute; left: 50%; bottom: 0; transform: translateX(-46%);
-      height: 96%; aspect-ratio: 3 / 4;
-      background: url(photo.jpeg) center 22% / cover;
-      filter: grayscale(1) contrast(1.25) brightness(1.02);
-      -webkit-mask-image: radial-gradient(ellipse 44% 58% at 52% 42%, #000 45%, transparent 100%);
-              mask-image: radial-gradient(ellipse 44% 58% at 52% 42%, #000 45%, transparent 100%);
+      position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+      height: 86%; width: auto; display: block;
+      filter: grayscale(1) contrast(1.2) brightness(1.02);
     }
     .name {
       position: absolute; left: -0.04em; right: 0; top: 60%; transform: translateY(-50%);
@@ -220,8 +217,8 @@
       .hero { height: auto; min-height: 0; max-height: none; padding-bottom: 32px; }
       .hero nav { position: relative; grid-template-columns: 1fr auto; font-size: 16px; }
       .hero nav a:nth-child(2), .hero nav a:nth-child(3) { display: none; }
-      .photo { position: relative; left: auto; transform: none; width: 100%; height: auto; margin-top: -10px; }
-      .name { position: relative; top: auto; right: auto; transform: none; margin-top: -0.9em; font-size: 23vw; line-height: 0.82; white-space: normal; padding: 0 var(--pad); left: 0; }
+      .photo { position: relative; left: auto; transform: none; width: 88%; height: auto; margin: 12px auto 0; }
+      .name { position: relative; top: auto; right: auto; transform: none; margin-top: -0.32em; font-size: 23vw; line-height: 0.82; white-space: normal; padding: 0 var(--pad); left: 0; }
       .name span { display: block; }
       .role { position: relative; right: auto; bottom: auto; padding: 28px var(--pad) 0; }
       .social { position: relative; left: auto; bottom: auto; padding: 20px var(--pad) 0; display: flex; gap: 20px; }
@@ -248,7 +245,7 @@
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="photo" role="img" aria-label="Portrait of Prasanth Padmanabhan Menon"></div>
+  <img class="photo" src="photo-cutout.webp" width="622" height="907" alt="Portrait of Prasanth Padmanabhan Menon" />
   <h1 class="name" id="top"><span>Prasanth</span> <span>Menon</span></h1>
   <ul class="social">
     <li><a href="https://www.linkedin.com/in/prasanth-padmanabhan-menon" target="_blank" rel="noopener">LinkedIn</a></li>

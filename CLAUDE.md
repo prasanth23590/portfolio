@@ -25,7 +25,7 @@ Single `index.html` — no build step, no framework, no dependencies except Goog
 - **Design tokens**: CSS custom properties in `:root`: `--light: #E3E3E1`, `--dark: #1A1A1A`, `--card: #222222`, `--grey: #8C8C8C`
 - **Fonts**: Inter Tight (everything) + JetBrains Mono (bracketed year labels like `(2026)`) via Google Fonts
 - **Sections** (in order): hero (light; full-width name over greyscale photo with `mix-blend-mode: difference`) → statement (dark, ghost name behind) → #work (AI coding and PM work: 3 card pairs + list) → #education (light) → #career (light) → #writing (dark) → skills + patent (dark) → #contact (light, giant name sign-off) → footer
-- **Photo**: `photo.jpeg`, shown greyscale with a radial CSS mask in `.photo`. A background-removed PNG would look better.
+- **Photo**: `photo-cutout.webp` (background removed from `photo.jpeg` with rembg, BiRefNet portrait model), shown greyscale in `img.photo`
 - **Motion**: one CSS load animation on the hero only, disabled under `prefers-reduced-motion`. No JS.
 
 ## Rules
