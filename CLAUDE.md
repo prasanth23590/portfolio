@@ -21,12 +21,12 @@ git add -A && git commit -m "..." && git push origin main
 
 Single `index.html` — no build step, no framework, no dependencies except Google Fonts CDN.
 
-- **Design tokens**: CSS custom properties in `:root` (colors, fonts, spacing)
-- **Fonts**: DM Serif Display (headings) + DM Sans (body) via Google Fonts
-- **Palette**: `--bg: #f8f6f2`, `--ink: #0f0f0f`, `--accent: #c8622a` (terracotta)
-- **Sections** (in order): nav → hero → #impact → #career → #skills → #agentic → #blogs → #certs → #contact → footer
-- **Animations**: IntersectionObserver drives `.fade-in` → `.visible` and `.timeline-item` → `.visible` on scroll
-- **Photo**: placeholder `<div class="photo-placeholder">` inside `.hero-photo-wrap` — replace with `<img>` pointing to photo file
+- **Design direction**: monochrome, inspired by the Dribbble "Alexfolio" template. No accent colour. Avoid cream + terracotta + serif, which reads as AI-generated.
+- **Design tokens**: CSS custom properties in `:root`: `--light: #E3E3E1`, `--dark: #1A1A1A`, `--card: #222222`, `--grey: #8C8C8C`
+- **Fonts**: Inter Tight (everything) + JetBrains Mono (bracketed year labels like `(2026)`) via Google Fonts
+- **Sections** (in order): hero (light; full-width name over greyscale photo with `mix-blend-mode: difference`) → statement (dark, ghost name behind) → #work (AI coding and PM work: 3 card pairs + list) → #education (light) → #career (light) → #writing (dark) → skills + patent (dark) → #contact (light, giant name sign-off) → footer
+- **Photo**: `photo-cutout.webp` (background removed from `photo.jpeg` with rembg, BiRefNet portrait model), shown greyscale in `img.photo`
+- **Motion**: one CSS load animation on the hero only, disabled under `prefers-reduced-motion`. No JS.
 
 ## Rules
 
