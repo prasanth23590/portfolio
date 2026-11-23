@@ -7,14 +7,18 @@ type: project
 SAP Community author login: **PrasanthPadmanabhan** (user-id/824)
 Profile: https://community.sap.com/t5/user/viewprofilepage/user-id/824
 
-Total: 19 blog posts, 127,173 combined views (as of May 2026)
+Total: 19 blog posts, 141,429 combined views (as of Nov 2026, from the SAP Community API)
 
 Top posts:
-- Extensibility in SAP S/4HANA Cloud — 16,984 views (Sep 2022)
-- How to use REST API to post data into S/4HANA Cloud via SAP IRPA — 12,413 views (Apr 2021)
-- Key User Extensibility: Custom Code List with CDS View — 11,973 views (Oct 2021)
-- Convert number to words in S/4HANA Cloud — 10,773 views (Jul 2020)
-- Release Assessment and Scope Dependency (Apr 2024) — 10,385 views
+- Extensibility in SAP S/4HANA Cloud — 18,537 views (Sep 2022)
+- Key User Extensibility: Custom Code List with CDS View — 13,625 views (Oct 2021)
+- How to use REST API to post data into S/4HANA Cloud via SAP IRPA 2.0 — 13,488 views (Apr 2021)
+- Release Assessment and Scope Dependency: 2024 Edition — 13,101 views (Apr 2024)
+- Convert number to words in S/4HANA Cloud — 11,963 views (Jul 2020)
+- Latest: Object Release State in Cloudification Repository Viewer (Mar 2026) — 3,655 views
+
+To refresh: open the SAP Community profile in a normal browser (Cloudflare blocks headless/automated access), then in the DevTools console run a fetch to /api/2.0/search with the LiQL query
+SELECT subject, view_href, post_time, metrics.views FROM messages WHERE author.id = '824' AND depth = 0 ORDER BY post_time DESC LIMIT 100
 
 Claude Code insights (from /insights, captured May 2026):
 - 68 sessions, 649 messages, 38 commits, 228 files, 26 active days
