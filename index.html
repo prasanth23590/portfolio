@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prasanth Padmanabhan Menon, Product Manager at SAP</title>
-  <meta name="description" content="Product manager at SAP for Extensibility and Clean Core. 14 years in enterprise software, now building the agents that run PM workflows." />
+  <title>Prasanth Padmanabhan Menon, Product Manager and Agent Builder</title>
+  <meta name="description" content="Product manager with 14 years in enterprise software. I write the AI agents that do my product work." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --paper:   #ECEFF3;
-      --surface: #FFFFFF;
-      --ink:     #0E1B2C;
-      --ink-2:   #4A5669;
-      --ink-3:   #7C8797;
-      --line:    #D3D9E1;
-      --cobalt:  #2348D6;
-      --cobalt-soft: #DDE4FB;
-      --shipped: #177245;
-      --display: 'Bricolage Grotesque', system-ui, sans-serif;
-      --body:    'Public Sans', system-ui, sans-serif;
-      --max:     1160px;
-      --pad:     clamp(1.25rem, 4vw, 3rem);
-      --r-lg:    14px;
-      --r-sm:    6px;
+      --light: #E3E3E1;
+      --light-line: #C4C4C2;
+      --dark:  #1A1A1A;
+      --card:  #222222;
+      --line:  #333333;
+      --grey:  #8C8C8C;
+      --grey-on-light: #5A5A5A;
+      --white: #FFFFFF;
+      --f: 'Inter Tight', system-ui, sans-serif;
+      --m: 'JetBrains Mono', ui-monospace, monospace;
+      --pad: clamp(1.25rem, 3.4vw, 3rem);
+      --max: 1280px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,474 +29,312 @@
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
     body {
-      font-family: var(--body);
-      background: var(--paper);
-      color: var(--ink);
-      font-size: 1.0625rem;
-      line-height: 1.6;
+      font-family: var(--f);
+      background: var(--dark);
+      color: var(--white);
+      font-size: 17px;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
-      font-feature-settings: "tnum" 1;
     }
-
     a { color: inherit; }
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 4px;
-    }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 2px; }
 
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+    .w { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+    .label { font-family: var(--m); font-size: 13.5px; color: var(--grey); font-weight: 400; }
+    .light .label { color: var(--grey-on-light); }
 
-    /* ── Nav ── */
-    .nav {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(236,239,243,0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
+    .sec-head {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+      font-size: 22px; font-weight: 500; margin-bottom: 28px;
     }
-    .nav .wrap {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px;
-    }
-    .nav-name {
-      font-family: var(--display); font-weight: 700; font-size: 1.05rem;
-      text-decoration: none; letter-spacing: -0.01em;
-    }
-    .nav ul { list-style: none; display: flex; gap: 1.75rem; }
-    .nav ul a {
-      font-size: 0.95rem; text-decoration: none; color: var(--ink-2);
-    }
-    .nav ul a:hover { color: var(--cobalt); }
 
     /* ── Hero ── */
-    .hero { padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(3rem, 6vw, 5rem); }
-    .hero-grid {
-      display: grid; grid-template-columns: 1fr 260px;
-      gap: clamp(2rem, 5vw, 4.5rem); align-items: center;
+    .hero {
+      position: relative; height: 100vh; min-height: 680px; max-height: 1100px;
+      background: var(--light); color: var(--dark); overflow: hidden;
     }
-    .hero h1 {
-      font-family: var(--display);
-      font-weight: 800;
-      font-size: clamp(2.9rem, 7.6vw, 6.6rem);
-      line-height: 0.9;
-      letter-spacing: -0.045em;
-      font-variation-settings: "opsz" 96;
+    .hero nav {
+      position: absolute; inset: 0 0 auto; z-index: 3;
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr auto;
+      padding: 28px var(--pad); font-size: 19px; font-weight: 500;
     }
-    .hero h1 span { display: block; }
-    .hero-lede {
-      margin-top: 2rem;
-      font-size: clamp(1.2rem, 2vw, 1.45rem);
-      line-height: 1.45;
-      max-width: 34ch;
-      color: var(--ink);
-    }
-    .hero-lede em { font-style: normal; color: var(--cobalt); }
-    .hero-actions { margin-top: 2.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center;
-      padding: 0.8rem 1.3rem; border-radius: 999px;
-      font-weight: 600; font-size: 0.98rem; text-decoration: none;
-      border: 1.5px solid var(--ink);
-      transition: background 0.15s, color 0.15s;
-    }
-    .btn-solid { background: var(--ink); color: var(--surface); }
-    .btn-solid:hover { background: var(--cobalt); border-color: var(--cobalt); }
-    .btn-line:hover { background: var(--ink); color: var(--surface); }
+    .hero nav a { text-decoration: none; }
+    .hero nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-    .portrait {
-      position: relative;
+    .photo {
+      position: absolute; left: 50%; bottom: 0; transform: translateX(-46%);
+      height: 96%; aspect-ratio: 3 / 4;
+      background: url(photo.jpeg) center 22% / cover;
+      filter: grayscale(1) contrast(1.25) brightness(1.02);
+      -webkit-mask-image: radial-gradient(ellipse 44% 58% at 52% 42%, #000 45%, transparent 100%);
+              mask-image: radial-gradient(ellipse 44% 58% at 52% 42%, #000 45%, transparent 100%);
     }
-    .portrait img {
-      width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover;
-      object-position: center 18%;
-      border-radius: var(--r-lg);
-      display: block;
+    .name {
+      position: absolute; left: -0.04em; right: 0; top: 60%; transform: translateY(-50%);
+      font-size: 15.6vw; line-height: 0.8; font-weight: 500; letter-spacing: -0.055em;
+      white-space: nowrap; color: var(--white); mix-blend-mode: difference; z-index: 2;
     }
-    .portrait figcaption {
-      margin-top: 0.6rem; font-size: 0.85rem; color: var(--ink-3);
+    .name span { display: inline-block; }
+    .role {
+      position: absolute; right: var(--pad); bottom: 44px; z-index: 2;
+      font-size: clamp(32px, 3.6vw, 52px); line-height: 1.02; font-weight: 500; letter-spacing: -0.035em;
     }
+    .social {
+      position: absolute; left: var(--pad); bottom: 44px; z-index: 2;
+      list-style: none; display: grid; gap: 14px; font-size: 15px; font-weight: 500;
+    }
+    .social a { text-decoration: none; border-bottom: 1px solid var(--dark); }
 
-    /* the status strip under the hero: role now, and two programmes in progress */
-    .now {
-      margin-top: clamp(2.5rem, 5vw, 4rem);
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      display: grid; grid-template-columns: 1.25fr 1fr 1fr;
-    }
-    .now > div { padding: 1.2rem 1.5rem; }
-    .now > div + div { border-left: 1px solid var(--line); }
-    .now .k { display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; color: var(--ink-3); margin-bottom: 0.3rem; }
-    .now .v { font-weight: 600; line-height: 1.35; }
-    .now .v span { display: block; font-weight: 400; color: var(--ink-2); font-size: 0.95rem; }
-    .version {
-      font-family: var(--display); font-weight: 700;
-      font-size: 1.05rem; color: var(--cobalt);
-      background: var(--cobalt-soft);
-      padding: 0.3rem 0.7rem; border-radius: var(--r-sm);
-      white-space: nowrap;
-    }
-    .status {
-      display: inline-flex; align-items: center; gap: 0.45rem;
-      font-weight: 600; color: var(--shipped);
-      white-space: nowrap;
-    }
-    .status::before {
-      content: ''; width: 8px; height: 8px; border-radius: 50%;
-      background: var(--shipped);
-      box-shadow: 0 0 0 4px rgba(23,114,69,0.15);
-    }
-
-    /* hero load: the single orchestrated motion on the page */
     @media (prefers-reduced-motion: no-preference) {
-      .hero h1 span, .hero-lede, .hero-actions, .portrait, .now {
-        animation: rise 0.7s cubic-bezier(.2,.7,.2,1) both;
-      }
-      .hero h1 span:nth-child(2) { animation-delay: 0.06s; }
-      .hero h1 span:nth-child(3) { animation-delay: 0.12s; }
-      .hero-lede    { animation-delay: 0.22s; }
-      .hero-actions { animation-delay: 0.3s; }
-      .portrait     { animation-delay: 0.1s; }
-      .now          { animation-delay: 0.45s; }
+      .name span { animation: rise 0.9s cubic-bezier(.2,.7,.2,1) both; }
+      .name span:nth-child(2) { animation-delay: 0.08s; }
+      .photo { animation: fade 1.2s ease both; }
+      .role, .social { animation: fade 0.8s ease 0.5s both; }
     }
-    @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(0.25em); } }
+    @keyframes fade { from { opacity: 0; } }
 
-    /* ── Sections ── */
-    section.block { scroll-margin-top: 60px; padding: clamp(4rem, 8vw, 6.5rem) 0; border-top: 1px solid var(--line); }
-    .block-head {
-      display: grid; grid-template-columns: 1fr 1.2fr; gap: 2rem 4rem;
-      align-items: end; margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
+    /* ── Statement ── */
+    .state { position: relative; overflow: hidden; padding: 140px 0 160px; }
+    .state p {
+      position: relative; z-index: 1;
+      font-size: clamp(34px, 4.4vw, 60px); line-height: 1.05; letter-spacing: -0.035em; font-weight: 500;
+      max-width: 19ch;
     }
-    h2 {
-      font-family: var(--display); font-weight: 700;
-      font-size: clamp(2.1rem, 4.4vw, 3.4rem);
-      line-height: 1; letter-spacing: -0.035em;
+    .state p span { color: var(--grey); }
+    .ghost {
+      position: absolute; left: -0.04em; bottom: -0.2em;
+      font-size: 15.6vw; line-height: 1; font-weight: 500; letter-spacing: -0.055em;
+      color: #212121; white-space: nowrap; user-select: none;
     }
-    .block-head p { color: var(--ink-2); max-width: 52ch; }
 
-    /* ── Agents work ── */
-    .feature {
-      background: var(--ink); color: var(--surface);
-      border-radius: var(--r-lg);
-      padding: clamp(1.75rem, 4vw, 3rem);
-      display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem 3.5rem;
-      margin-bottom: 1rem;
-    }
-    .feature h3 {
-      font-family: var(--display); font-weight: 700;
-      font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.05; letter-spacing: -0.03em;
-    }
-    .feature .stack { margin-top: 1rem; color: #A9B6CC; font-size: 0.92rem; }
-    .feature p { color: #D5DCE8; }
-    .pipeline {
-      list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem;
-    }
-    .pipeline li {
-      font-size: 0.9rem; font-weight: 600;
-      padding: 0.35rem 0.8rem; border-radius: 999px;
-      background: rgba(255,255,255,0.09); color: var(--surface);
-    }
-    .pipeline li + li::before { content: '› '; color: #7E93C4; }
+    /* ── Work ── */
+    .work { padding: 40px 0 120px; }
+    .proj { display: grid; grid-template-columns: 380px 1fr; gap: 12px; margin-bottom: 12px; }
+    .pc, .vis { background: var(--card); border: 1px solid var(--line); border-radius: 18px; }
+    .pc { padding: 32px; }
+    .pc h3 { font-size: clamp(34px, 3.2vw, 44px); font-weight: 500; letter-spacing: -0.035em; line-height: 1; margin: 28px 0 22px; }
+    .pc p { color: var(--grey); font-size: 15.5px; line-height: 1.75; }
+    .pc p + p { margin-top: 0.8em; }
+    .pc .stack { color: #B5B5B5; }
+    .vis { padding: 36px; display: flex; align-items: center; justify-content: center; min-height: 360px; }
 
-    .work-list { list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); }
-    .work-list li {
-      display: grid; grid-template-columns: 1fr 1.35fr; gap: 0.5rem 3rem;
-      padding: 1.6rem clamp(1.25rem, 3vw, 2rem);
-    }
-    .work-list li + li { border-top: 1px solid var(--line); }
-    .work-list h3 {
-      font-family: var(--display); font-weight: 700; font-size: 1.3rem;
-      letter-spacing: -0.02em; line-height: 1.2;
-    }
-    .work-list .stack { font-size: 0.88rem; color: var(--ink-3); margin-top: 0.35rem; }
-    .work-list p { color: var(--ink-2); font-size: 0.98rem; }
+    .flow { list-style: none; display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 14px; font-size: 20px; font-weight: 500; }
+    .flow li { border: 1px solid #444; border-radius: 999px; padding: 14px 22px; }
+    .flow li:first-child { background: var(--white); color: var(--dark); border-color: var(--white); }
+    .flow li + li { position: relative; margin-left: 34px; }
+    .flow li + li::before { content: ''; position: absolute; right: calc(100% + 8px); top: 50%; width: 32px; height: 1px; background: #555; }
 
-    .proof {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 1.5rem;
-      grid-column: 1 / -1;
-    }
-    .proof div { padding-right: 1rem; }
-    .proof b {
-      display: block; font-family: var(--display); font-weight: 700;
-      font-size: clamp(1.8rem, 3.2vw, 2.6rem); letter-spacing: -0.03em; line-height: 1;
-    }
-    .proof span { color: #A9B6CC; font-size: 0.92rem; }
-    .proof-note { grid-column: 1 / -1; color: #7E93C4; font-size: 0.85rem; margin-top: -0.75rem; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; width: 100%; }
+    .stats b { display: block; font-size: clamp(48px, 5vw, 72px); font-weight: 500; letter-spacing: -0.05em; line-height: 1; }
+    .stats span { color: var(--grey); font-size: 15px; }
 
-    .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-    .tile {
-      background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg);
-      padding: clamp(1.5rem, 3vw, 2.25rem);
-      display: flex; flex-direction: column; gap: 0.75rem;
-    }
-    .tile h3 { font-family: var(--display); font-weight: 700; font-size: 1.6rem; letter-spacing: -0.025em; line-height: 1.1; }
-    .tile .stack { font-size: 0.88rem; color: var(--ink-3); }
-    .tile p { color: var(--ink-2); }
-    .tile .figure { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); display: flex; gap: 2rem; }
-    .tile .figure b { display: block; font-family: var(--display); font-size: 1.6rem; color: var(--cobalt); letter-spacing: -0.02em; line-height: 1.1; }
-    .tile .figure span { font-size: 0.88rem; color: var(--ink-3); }
+    .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; }
+    .col { background: #1C1C1C; border-radius: 12px; padding: 14px; display: grid; gap: 8px; align-content: start; }
+    .col .label { margin-bottom: 4px; }
+    .tk { background: #2A2A2A; border-radius: 8px; padding: 12px; font-size: 14px; }
+    .tk small { display: block; color: var(--grey); font-family: var(--m); font-size: 12px; margin-top: 4px; }
 
-    /* ── Education: the one full-colour section ── */
-    section.edu { background: var(--cobalt); color: var(--surface); border-top: none; }
-    .edu h2 { color: var(--surface); }
-    .edu .block-head p { color: #D4DCFA; }
-    .schools { list-style: none; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.22); border-radius: var(--r-lg); overflow: hidden; }
-    .schools li { background: var(--cobalt); padding: clamp(1.5rem, 3vw, 2.25rem); display: flex; flex-direction: column; gap: 0.5rem; }
-    .schools .yrs { color: #C3CEF8; font-size: 0.92rem; }
-    .schools h3 { font-family: var(--display); font-weight: 800; font-size: clamp(1.9rem, 3.6vw, 3rem); letter-spacing: -0.04em; line-height: 0.95; }
-    .schools li:not(:first-child) h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); font-weight: 700; }
-    .schools p { color: #E3E8FC; }
-    .schools .focus { margin-top: auto; padding-top: 1rem; color: #C3CEF8; font-size: 0.95rem; }
-    .certs-row { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
-    .certs-row li { border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 0.45rem 1rem; font-weight: 500; font-size: 0.95rem; }
+    .more { list-style: none; margin-top: 64px; border-top: 1px solid var(--line); }
+    .more li {
+      display: grid; grid-template-columns: 140px 1fr 1.3fr; gap: 24px;
+      padding: 26px 0; border-bottom: 1px solid var(--line); align-items: baseline;
+    }
+    .more h3 { font-size: 26px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.1; }
+    .more p { color: var(--grey); }
 
-    /* ── Releases (career) ── */
-    .releases { list-style: none; position: relative; }
-    .release {
-      display: grid; grid-template-columns: 150px 1fr; gap: 1rem 2.5rem;
-      padding: 2rem 0;
+    /* ── Light sections ── */
+    .light { background: var(--light); color: var(--dark); }
+    .edu, .career { padding: 120px 0; }
+    .row {
+      display: grid; grid-template-columns: 200px 1fr 1fr; gap: 24px;
+      padding: 34px 0; border-top: 1px solid var(--light-line); align-items: baseline;
     }
-    .release + .release { border-top: 1px dashed var(--line); }
-    .release-side { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start; }
-    .release-side time { font-size: 0.88rem; color: var(--ink-3); }
-    .release h3 {
-      font-family: var(--display); font-weight: 700; font-size: 1.55rem;
-      letter-spacing: -0.025em; line-height: 1.15;
-    }
-    .release .org { color: var(--ink-2); margin-top: 0.15rem; }
-    .release ul { list-style: none; margin-top: 1rem; display: grid; gap: 0.45rem; }
-    .release ul li { padding-left: 1.35rem; position: relative; color: var(--ink-2); max-width: 70ch; }
-    .release ul li::before {
-      content: '+'; position: absolute; left: 0; top: 0;
-      font-weight: 700; color: var(--shipped);
-    }
-    .release ul li strong { color: var(--ink); font-weight: 600; }
-    .release.older .version { background: transparent; border: 1px solid var(--line); color: var(--ink-2); }
+    .row:last-of-type { border-bottom: 1px solid var(--light-line); }
+    .row h3 { font-size: 40px; font-weight: 500; letter-spacing: -0.045em; line-height: 0.95; }
+    .edu .row.lead h3 { font-size: clamp(44px, 5vw, 72px); }
+    .row p { font-size: 19px; color: #4A4A4A; }
+    .certs { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
+    .certs li { border: 1px solid var(--dark); border-radius: 999px; padding: 9px 18px; font-weight: 500; font-size: 15px; }
+
+    .career { padding-top: 40px; }
+    .job { display: grid; grid-template-columns: 200px 1fr 1.25fr; gap: 24px; padding: 34px 0; border-top: 1px solid var(--light-line); }
+    .job:last-child { border-bottom: 1px solid var(--light-line); }
+    .job h3 { font-size: 30px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+    .job .org { color: var(--grey-on-light); margin-top: 6px; }
+    .job ul { list-style: none; display: grid; gap: 8px; color: #3A3A3A; }
+    .job ul li { padding-left: 18px; position: relative; }
+    .job ul li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 8px; height: 1px; background: var(--dark); }
 
     /* ── Writing ── */
-    .posts { list-style: none; }
-    .posts li + li { border-top: 1px solid var(--line); }
+    .writing { padding: 120px 0; }
+    .writing-intro { font-size: clamp(28px, 3vw, 40px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 500; max-width: 22ch; margin-bottom: 56px; }
+    .writing-intro span { color: var(--grey); }
+    .posts { list-style: none; border-top: 1px solid var(--line); }
     .posts a {
-      display: grid; grid-template-columns: 1fr 220px 72px; gap: 1.5rem;
-      align-items: center; padding: 1rem 0; text-decoration: none;
+      display: grid; grid-template-columns: 120px 1fr 110px; gap: 24px; align-items: baseline;
+      padding: 22px 0; border-bottom: 1px solid var(--line); text-decoration: none;
     }
-    .posts a:hover .post-title { color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; }
-    .post-title { font-weight: 500; line-height: 1.4; }
-    .post-date { display: block; font-size: 0.85rem; color: var(--ink-3); font-weight: 400; margin-top: 0.15rem; }
-    .bar { height: 8px; background: var(--cobalt-soft); border-radius: 4px; overflow: hidden; }
-    .bar span { display: block; height: 100%; background: var(--cobalt); border-radius: 4px; }
-    .views { text-align: right; font-weight: 600; font-size: 0.95rem; }
-    .posts-foot {
-      margin-top: 1.75rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-      color: var(--ink-2);
-    }
-    .posts-foot a { color: var(--cobalt); font-weight: 600; }
+    .posts a:hover .pt { text-decoration: underline; text-underline-offset: 4px; }
+    .pt { font-size: 21px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25; }
+    .pv { text-align: right; font-size: 21px; font-weight: 500; letter-spacing: -0.02em; }
+    .posts-all { display: inline-block; margin-top: 32px; font-weight: 500; text-underline-offset: 4px; }
 
-    /* ── Skills & credentials ── */
-    .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
-    .cols h3 {
-      font-family: var(--display); font-weight: 700; font-size: 1.15rem;
-      letter-spacing: -0.015em; padding-bottom: 0.75rem; margin-bottom: 0.9rem;
-      border-bottom: 2px solid var(--ink);
-    }
-    .cols ul { list-style: none; display: grid; gap: 0.5rem; color: var(--ink-2); }
-    .cols ul li strong { color: var(--ink); font-weight: 600; }
-
-    .creds { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1rem; margin-top: 3.5rem; }
-    .card {
-      background: var(--surface); border: 1px solid var(--line);
-      border-radius: var(--r-lg); padding: clamp(1.5rem, 3vw, 2rem);
-    }
-    .card h3 {
-      font-family: var(--display); font-weight: 700; font-size: 1.3rem;
-      letter-spacing: -0.02em; margin-bottom: 1rem;
-    }
-    .card dl { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.75rem 1rem; }
-    .card dt { color: var(--ink-3); font-size: 0.92rem; }
-    .card dd { color: var(--ink); }
-    .card dd span { display: block; color: var(--ink-2); font-size: 0.92rem; }
-    .patent p { color: var(--ink-2); }
-    .patent .pno { font-family: var(--display); font-weight: 700; font-size: 1.6rem; color: var(--cobalt); letter-spacing: -0.02em; margin-bottom: 0.35rem; }
+    /* ── Skills ── */
+    .skills { padding: 0 0 120px; }
+    .skill-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .skill-cols > div { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 28px 32px; }
+    .skill-cols h3 { font-size: 22px; font-weight: 500; margin-bottom: 16px; }
+    .skill-cols ul { list-style: none; display: grid; gap: 6px; color: var(--grey); }
+    .patent { margin-top: 12px; display: grid; grid-template-columns: 380px 1fr; gap: 12px; }
+    .patent .pc h3 { margin-top: 20px; margin-bottom: 0; }
+    .patent .lead-p { color: var(--white); font-size: 21px; line-height: 1.35; letter-spacing: -0.015em; }
 
     /* ── Contact ── */
-    .contact h2 { font-size: clamp(2.4rem, 6vw, 4.75rem); max-width: 14ch; }
-    .contact-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem 4rem; align-items: end; }
-    .contact p { color: var(--ink-2); max-width: 46ch; margin-top: 1.5rem; }
-    .contact-links { list-style: none; display: grid; gap: 0.25rem; }
-    .contact-links a {
-      display: flex; justify-content: space-between; gap: 1rem;
-      padding: 0.9rem 0; border-bottom: 1px solid var(--line);
-      text-decoration: none; font-weight: 500;
+    .contact { position: relative; overflow: hidden; padding: 120px 0 0; }
+    .contact h2 { font-size: clamp(44px, 7vw, 104px); font-weight: 500; letter-spacing: -0.05em; line-height: 0.95; max-width: 13ch; }
+    .contact h2 a { text-decoration: none; }
+    .contact h2 a:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px; }
+    .contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: end; }
+    .contact p { color: var(--grey-on-light); max-width: 44ch; margin-top: 28px; font-size: 19px; }
+    .contact-links { list-style: none; border-top: 1px solid var(--light-line); }
+    .contact-links a { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--light-line); text-decoration: none; font-weight: 500; }
+    .contact-links a span { color: var(--grey-on-light); font-weight: 400; }
+    .contact-links a:hover span { color: var(--dark); }
+    .sign {
+      margin-top: 100px; font-size: 15.6vw; line-height: 0.78; font-weight: 500; letter-spacing: -0.055em;
+      white-space: nowrap; margin-left: -0.04em; user-select: none;
     }
-    .contact-links a span { color: var(--ink-3); font-weight: 400; }
-    .contact-links a:hover { color: var(--cobalt); }
-
-    footer { padding: 2rem 0 3rem; color: var(--ink-3); font-size: 0.9rem; }
-    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 24px 0 28px; font-size: 15px; color: var(--grey-on-light); }
 
     /* ── Responsive ── */
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .portrait { max-width: 150px; order: -1; }
-      .portrait figcaption { display: none; }
-      .block-head, .feature, .work-list li, .contact-grid, .creds, .tiles, .schools { grid-template-columns: 1fr; }
-      .proof { grid-template-columns: 1fr 1fr; row-gap: 1.25rem; }
-      .now { grid-template-columns: 1fr; }
-      .now > div + div { border-left: none; border-top: 1px solid var(--line); }
-      .cols { grid-template-columns: 1fr 1fr; }
-      .release { grid-template-columns: 1fr; gap: 0.75rem; }
-      .release-side { flex-direction: row; align-items: center; gap: 0.9rem; }
-      .posts a { grid-template-columns: 1fr 64px; }
-      .posts .bar { display: none; }
+    @media (max-width: 960px) {
+      .proj, .patent { grid-template-columns: 1fr; }
+      .more li, .row, .job { grid-template-columns: 1fr; gap: 8px; }
+      .skill-cols { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .vis { min-height: 0; padding: 28px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 600px) {
-      .nav ul { display: none; }
-      .now { grid-template-columns: 1fr; gap: 0.75rem; }
-      .cols { grid-template-columns: 1fr; }
-      .card dl { grid-template-columns: 1fr; gap: 0.15rem; }
-      .card dd { margin-bottom: 0.6rem; }
+    @media (max-width: 700px) {
+      .hero { height: auto; min-height: 0; max-height: none; padding-bottom: 32px; }
+      .hero nav { position: relative; grid-template-columns: 1fr auto; font-size: 16px; }
+      .hero nav a:nth-child(2), .hero nav a:nth-child(3) { display: none; }
+      .photo { position: relative; left: auto; transform: none; width: 100%; height: auto; margin-top: -10px; }
+      .name { position: relative; top: auto; right: auto; transform: none; margin-top: -0.9em; font-size: 23vw; line-height: 0.82; white-space: normal; padding: 0 var(--pad); left: 0; }
+      .name span { display: block; }
+      .role { position: relative; right: auto; bottom: auto; padding: 28px var(--pad) 0; }
+      .social { position: relative; left: auto; bottom: auto; padding: 20px var(--pad) 0; display: flex; gap: 20px; }
+      .state { padding: 90px 0 110px; }
+      .board { grid-template-columns: 1fr; }
+      .flow { flex-direction: column; align-items: flex-start; }
+      .flow li + li { margin-left: 0; margin-top: 18px; }
+      .flow li + li::before { right: auto; left: 28px; top: -19px; width: 1px; height: 18px; }
+      .posts a { grid-template-columns: 1fr auto; row-gap: 4px; }
+      .posts .label { grid-column: 1 / -1; }
+      .pt, .pv { font-size: 18px; }
+      .edu, .career, .writing { padding: 80px 0; }
+      .contact { padding-top: 80px; }
+      .sign { margin-top: 64px; }
     }
   </style>
 </head>
 <body>
 
-<nav class="nav" aria-label="Main">
-  <div class="wrap">
-    <a href="#top" class="nav-name">Prasanth Menon</a>
-    <ul>
-      <li><a href="#agents">AI work</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#releases">Career</a></li>
-      <li><a href="#writing">Writing</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+<header class="hero">
+  <nav aria-label="Main">
+    <a href="#top">© Prasanth Menon</a>
+    <a href="#work">Work</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="photo" role="img" aria-label="Portrait of Prasanth Padmanabhan Menon"></div>
+  <h1 class="name" id="top"><span>Prasanth</span> <span>Menon</span></h1>
+  <ul class="social">
+    <li><a href="https://www.linkedin.com/in/prasanth-padmanabhan-menon" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="mailto:pra_santh@outlook.com">Email</a></li>
+    <li><a href="#writing">Writing</a></li>
+  </ul>
+  <p class="role">Product Manager<br />Agent Builder</p>
+</header>
 
-<main id="top">
+<main>
 
-  <!-- Hero -->
-  <header class="hero">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <h1><span>Prasanth</span><span>Padmanabhan</span><span>Menon</span></h1>
-          <p class="hero-lede">Product manager at SAP who writes code. After 14 years shipping enterprise software, I now build <em>the agents that do my PM work</em>.</p>
-          <div class="hero-actions">
-            <a class="btn btn-solid" href="mailto:pra_santh@outlook.com">Email me</a>
-            <a class="btn btn-line" href="https://www.linkedin.com/in/prasanth-padmanabhan-menon" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-        <figure class="portrait">
-          <img src="photo.jpeg" alt="Portrait of Prasanth Padmanabhan Menon" width="768" height="1024" />
-          <figcaption>Bangalore, India</figcaption>
-        </figure>
-      </div>
-
-      <div class="now">
-        <div>
-          <p class="k"><span class="status">Now</span></p>
-          <p class="v">Product Manager, Extensibility and Clean Core<span>SAP Cloud ERP Private Edition, since Dec 2025</span></p>
-        </div>
-        <div>
-          <p class="k">Studying</p>
-          <p class="v">MBA, IIM Ahmedabad<span>2026 to 2028</span></p>
-        </div>
-        <div>
-          <p class="k">Studying</p>
-          <p class="v">Executive PG in AI and ML<span>IIIT Bangalore, since 2025</span></p>
-        </div>
-      </div>
+  <section class="state" aria-label="About">
+    <div class="w">
+      <p>Fourteen years in enterprise software. <span>Now I write the AI agents that do my product work.</span></p>
     </div>
-  </header>
+    <div class="ghost" aria-hidden="true">Prasanth Menon</div>
+  </section>
 
-  <!-- Agent work -->
-  <section class="block" id="agents">
-    <div class="wrap">
-      <div class="block-head">
-        <h2>AI coding and PM work</h2>
-        <p>I write the tools myself with Claude Code, MCP servers and multi-agent pipelines, and use them as working infrastructure for product management. Several are now used by other product teams at SAP.</p>
-      </div>
+  <!-- AI coding and PM work -->
+  <section class="work" id="work">
+    <div class="w">
+      <h2 class="sec-head"><span>AI coding and PM work</span><span class="label">(2025 to now)</span></h2>
 
-      <article class="feature">
-        <div>
-          <h3>PM workflow automation, from one directive to a full spec</h3>
-          <p class="stack">Claude Code skills</p>
-          <ol class="pipeline" aria-label="Pipeline steps">
-            <li>Directive</li><li>PRD</li><li>UI mocks</li><li>Architecture</li>
+      <article class="proj">
+        <div class="pc">
+          <span class="label">(2026)</span>
+          <h3>PM workflow automation</h3>
+          <p>A Claude Code skill that turns one request into a PRD, UI mocks and a proposed architecture. I built it for my own work. Product managers across SAP now use it.</p>
+          <p>A companion skill turns ATC findings into outcomes customers can act on.</p>
+        </div>
+        <div class="vis">
+          <ol class="flow" aria-label="Pipeline">
+            <li>Request</li><li>PRD</li><li>UI mocks</li><li>Architecture</li>
           </ol>
         </div>
-        <p>A Claude skill that runs the whole PM pipeline. I built it for my own work, and it has since been adopted by product managers across SAP. A companion skill turns ATC findings into outcomes customers can act on.</p>
-        <div class="proof">
-          <div><b>68</b><span>Claude Code sessions</span></div>
-          <div><b>228</b><span>files written or changed</span></div>
-          <div><b>38</b><span>commits shipped</span></div>
-          <div><b>26</b><span>active days</span></div>
-        </div>
-        <p class="proof-note">From Claude Code usage insights, May 2026.</p>
       </article>
 
-      <div class="tiles">
-        <article class="tile">
-          <h3>Enterprise research agent platform</h3>
-          <p class="stack">LangGraph, FastAPI, MCP, gVisor</p>
-          <p>Multi-agent research with sandboxed code execution, deep and quick modes, and a live streaming UI. Multi-day research and reporting fits into one session.</p>
-          <div class="figure">
+      <article class="proj">
+        <div class="pc">
+          <span class="label">(2026)</span>
+          <h3>Research agent platform</h3>
+          <p>Multi-agent research with sandboxed code execution (gVisor), deep and quick modes, and a live streaming UI. It connects to Jira, Confluence, GitHub, ServiceNow, Teams and Outlook, so days of research and reporting fit into one session.</p>
+          <p class="stack">LangGraph, FastAPI, MCP</p>
+        </div>
+        <div class="vis">
+          <div class="stats">
             <div><b>8</b><span>MCP servers</span></div>
-            <div><b>~107</b><span>enterprise tools</span></div>
+            <div><b>107</b><span>enterprise tools</span></div>
+            <div><b>68</b><span>agent sessions</span></div>
+            <div><b>38</b><span>commits shipped</span></div>
           </div>
-        </article>
-        <article class="tile">
-          <h3>Agent Monitor</h3>
-          <p class="stack">TypeScript, React, server-sent events</p>
-          <p>A live Kanban board that reads Claude Code's state files and shows every running session, subagent task and approval queue. Launches with one click on macOS. I'm considering an open-source release.</p>
-          <div class="figure">
-            <div><b>Live</b><span>sessions, subagents, approvals</span></div>
-          </div>
-        </article>
-      </div>
+        </div>
+      </article>
 
-      <ul class="work-list">
-        <li>
-          <div><h3>MCP servers for internal teams</h3><p class="stack">MCP</p></div>
-          <p>MCP integrations that let product teams run LLM analysis directly against enterprise data sources. In active use across internal SAP workflows.</p>
-        </li>
-        <li>
-          <div><h3>Multi-agent orchestration</h3><p class="stack">Parallel subagents</p></div>
-          <p>Parallel subagents for competitive research, synthesis and slide decks, started from a single high-level request. 68 sessions and 38 commits shipped this way.</p>
-        </li>
-        <li>
-          <div><h3>Gen AI assistant on SAP AI Core</h3><p class="stack">RAG, vector databases</p></div>
-          <p>A retrieval-augmented assistant designed, shipped and validated with A/B testing. Hands-on work with Ollama, Hugging Face and vector databases in an enterprise delivery.</p>
-        </li>
+      <article class="proj">
+        <div class="pc">
+          <span class="label">(2026)</span>
+          <h3>Agent Monitor</h3>
+          <p>A live board that reads Claude Code's state files and shows every running session, subagent task and approval queue. Launches with one click on macOS. I'm considering an open-source release.</p>
+          <p class="stack">TypeScript, React, server-sent events</p>
+        </div>
+        <div class="vis" aria-hidden="true">
+          <div class="board">
+            <div class="col"><span class="label">Running</span><div class="tk">Competitor research<small>subagent</small></div><div class="tk">Architecture draft<small>subagent</small></div></div>
+            <div class="col"><span class="label">Needs approval</span><div class="tk">Write PRD<small>session</small></div></div>
+            <div class="col"><span class="label">Done</span><div class="tk">UI mocks<small>subagent</small></div><div class="tk">Scope summary<small>subagent</small></div></div>
+          </div>
+        </div>
+      </article>
+
+      <ul class="more">
+        <li><span class="label">(2026)</span><h3>MCP servers for internal teams</h3><p>Integrations that let product teams run LLM analysis directly against enterprise data sources. In active use across internal SAP workflows.</p></li>
+        <li><span class="label">(2026)</span><h3>Multi-agent orchestration</h3><p>Parallel subagents for competitive research, synthesis and slide decks, started from one high-level request.</p></li>
+        <li><span class="label">(2024)</span><h3>Gen AI assistant on SAP AI Core</h3><p>A retrieval-augmented assistant, designed, shipped and validated with A/B tests. Built with Ollama, Hugging Face and vector databases.</p></li>
       </ul>
     </div>
   </section>
 
   <!-- Education -->
-  <section class="block edu" id="education">
-    <div class="wrap">
-      <div class="block-head">
-        <h2>Education</h2>
-        <p>Two programmes in progress alongside a full-time PM role: management at IIM Ahmedabad, and applied AI and machine learning at IIIT Bangalore.</p>
-      </div>
-      <ul class="schools">
-        <li>
-          <span class="yrs">2026 to 2028</span>
-          <h3>IIM Ahmedabad</h3>
-          <p>MBA (BPGP)</p>
-        </li>
-        <li>
-          <span class="yrs">2025 to now</span>
-          <h3>IIIT Bangalore</h3>
-          <p>Executive PG in Artificial Intelligence and Machine Learning</p>
-        </li>
-        <li>
-          <span class="yrs">2007 to 2011</span>
-          <h3>Anna University</h3>
-          <p>Bachelor of Engineering, Karpaga Vinayaka College of Engineering and Technology</p>
-        </li>
-      </ul>
-      <ul class="certs-row" aria-label="Certifications">
+  <section class="edu light" id="education">
+    <div class="w">
+      <h2 class="sec-head"><span>Education</span><span class="label">(2007 to 2028)</span></h2>
+      <div class="row lead"><span class="label">(2026 to 2028)</span><h3>IIM Ahmedabad</h3><p>MBA (BPGP)</p></div>
+      <div class="row"><span class="label">(2025 to now)</span><h3>IIIT Bangalore</h3><p>Executive PG in Artificial Intelligence and Machine Learning</p></div>
+      <div class="row"><span class="label">(2007 to 2011)</span><h3>Anna University</h3><p>Bachelor of Engineering, Karpaga Vinayaka College of Engineering and Technology</p></div>
+      <ul class="certs" aria-label="Certifications">
         <li>Certified Scrum Product Owner</li>
         <li>SAP BTP Solution Architect</li>
         <li>Perplexity AI Business Fellow, batch 1</li>
@@ -508,219 +343,117 @@
     </div>
   </section>
 
-  <!-- Career as releases -->
-  <section class="block" id="releases">
-    <div class="wrap">
-      <div class="block-head">
-        <h2>Release history</h2>
-        <p>I own SAP's release assessment product, so here is my career written the way I'd want release notes written: what changed, and what shipped.</p>
+  <!-- Career -->
+  <section class="career light" id="career">
+    <div class="w">
+      <h2 class="sec-head"><span>Career</span><span class="label">(2012 to now)</span></h2>
+      <div class="jobs">
+        <div class="job">
+          <span class="label">(Dec 2025 to now)</span>
+          <div><h3>Product Manager</h3><p class="org">SAP Labs India</p></div>
+          <ul>
+            <li>Own Extensibility and Clean Core in SAP Cloud ERP Private Edition</li>
+            <li>Built PM workflow automation adopted by PMs across SAP</li>
+            <li>Built several MCP servers that raise the quality and speed of internal workflows</li>
+          </ul>
+        </div>
+        <div class="job">
+          <span class="label">(Nov 2023 to Dec 2025)</span>
+          <div><h3>Product Owner</h3><p class="org">SAP Labs India</p></div>
+          <ul>
+            <li>Owned Release Assessment and Scope Dependency for S/4HANA Cloud Public Edition</li>
+            <li>About 120% adoption growth, 15+ features in 15 months, 50+ customer demos</li>
+            <li>Shipped a RAG-based Gen AI assistant on SAP AI Core, validated with A/B tests</li>
+          </ul>
+        </div>
+        <div class="job">
+          <span class="label">(Jun 2020 to Nov 2023)</span>
+          <div><h3>Product Expert</h3><p class="org">SAP Labs India</p></div>
+          <ul>
+            <li>Customer advocate for S/4HANA Cloud extensibility, with 25+ demos</li>
+            <li>Built and demoed SAP Intelligent RPA bots that won new customers</li>
+            <li>Wrote 19 SAP Community articles and coached teams on OKRs</li>
+          </ul>
+        </div>
+        <div class="job">
+          <span class="label">(Aug 2016 to Jun 2020)</span>
+          <div><h3>Scrum Master and Developer</h3><p class="org">SAP Labs India</p></div>
+          <ul>
+            <li>Lead developer for Job Monitoring, BI Monitoring and Rapid Content Delivery in SAP Solution Manager</li>
+          </ul>
+        </div>
+        <div class="job">
+          <span class="label">(2012 to 2016)</span>
+          <div><h3>ABAP and Technology Consultant</h3><p class="org">Brillio, then EXA-AG on contract at SAP</p></div>
+          <ul>
+            <li>Delivered WRICEF objects for 5+ clients, then extended SAP Multi Resource Scheduling</li>
+          </ul>
+        </div>
       </div>
-
-      <ol class="releases" reversed>
-        <li class="release">
-          <div class="release-side"><span class="version">v6.0</span><time>Dec 2025 to now</time></div>
-          <div>
-            <h3>Product Manager</h3>
-            <p class="org">SAP Labs India</p>
-            <ul>
-              <li>Own <strong>Extensibility and Clean Core</strong> in SAP Cloud ERP Private Edition</li>
-              <li>Built PM workflow automation (PRD, UI mocks, architecture) <strong>adopted by PMs across SAP</strong></li>
-              <li>Built a Claude skill that turns ATC findings into actionable customer outcomes</li>
-              <li>Shipped several MCP servers that raise the quality and speed of internal workflows</li>
-            </ul>
-          </div>
-        </li>
-        <li class="release">
-          <div class="release-side"><span class="version">v5.0</span><time>Nov 2023 to Dec 2025</time></div>
-          <div>
-            <h3>Product Owner</h3>
-            <p class="org">SAP Labs India</p>
-            <ul>
-              <li>Owned <strong>Release Assessment and Scope Dependency</strong>, the update intelligence product for S/4HANA Cloud Public Edition</li>
-              <li><strong>About 120% adoption growth</strong>, 15+ features shipped in 15 months, 50+ customer demos</li>
-              <li>Shipped a RAG-based Gen AI assistant on SAP AI Core, validated with A/B tests</li>
-              <li>Ran adoption analysis in Qualtrics and worked directly with pre-sales and customer success</li>
-            </ul>
-          </div>
-        </li>
-        <li class="release older">
-          <div class="release-side"><span class="version">v4.0</span><time>Jun 2020 to Nov 2023</time></div>
-          <div>
-            <h3>Product Expert</h3>
-            <p class="org">SAP Labs India</p>
-            <ul>
-              <li>Customer advocate for S/4HANA Cloud extensibility, with 25+ demos across Key User, RAP/ABAP and BTP side-by-side</li>
-              <li>Built and demoed SAP Intelligent RPA bots that turned prospects into customers</li>
-              <li>Wrote 19 SAP Community articles with 127K+ views, and coached teams on OKRs</li>
-            </ul>
-          </div>
-        </li>
-        <li class="release older">
-          <div class="release-side"><span class="version">v3.0</span><time>Aug 2016 to Jun 2020</time></div>
-          <div>
-            <h3>Scrum Master and Developer</h3>
-            <p class="org">SAP Labs India</p>
-            <ul>
-              <li>Lead developer for Job Monitoring, BI Monitoring and Rapid Content Delivery in SAP Solution Manager</li>
-              <li>OO ABAP architecture, Web Dynpro UIs and OData services</li>
-            </ul>
-          </div>
-        </li>
-        <li class="release older">
-          <div class="release-side"><span class="version">v2.0</span><time>Jul 2014 to Jul 2016</time></div>
-          <div>
-            <h3>Technology Consultant</h3>
-            <p class="org">EXA-AG, on contract at SAP</p>
-            <ul>
-              <li>Supported and extended SAP Multi Resource Scheduling across Project Systems and HR</li>
-            </ul>
-          </div>
-        </li>
-        <li class="release older">
-          <div class="release-side"><span class="version">v1.0</span><time>May 2012 to Jul 2014</time></div>
-          <div>
-            <h3>ABAP Consultant</h3>
-            <p class="org">Brillio</p>
-            <ul>
-              <li>Went from trainee to consultant, delivering WRICEF objects for 5+ clients in OO ABAP, Web Dynpro and SAP Workflow</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
     </div>
   </section>
 
   <!-- Writing -->
-  <section class="block" id="writing">
-    <div class="wrap">
-      <div class="block-head">
-        <h2>Writing on SAP Community</h2>
-        <p>19 articles with 127,173 combined views, mostly on S/4HANA Cloud extensibility, BTP, Intelligent RPA and Clean Core.</p>
-      </div>
-
+  <section class="writing" id="writing">
+    <div class="w">
+      <h2 class="sec-head"><span>Writing</span><span class="label">(2020 to now)</span></h2>
+      <p class="writing-intro">19 articles on SAP Community. <span>127,173 views so far.</span></p>
       <ul class="posts">
-        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/extensibility-in-sap-s-4hana-cloud/ba-p/13526826" target="_blank" rel="noopener">
-          <span class="post-title">Extensibility in SAP S/4HANA Cloud<span class="post-date">Sep 2022</span></span>
-          <span class="bar" aria-hidden="true"><span style="width:100%"></span></span><span class="views">16,984</span></a></li>
-        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/how-to-use-a-rest-api-to-post-data-into-sap-s-4hana-cloud-using-sap/ba-p/13515417" target="_blank" rel="noopener">
-          <span class="post-title">How to use a REST API to post data into SAP S/4HANA Cloud using SAP Intelligent RPA<span class="post-date">Apr 2021</span></span>
-          <span class="bar" aria-hidden="true"><span style="width:73%"></span></span><span class="views">12,413</span></a></li>
-        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/key-user-extensibility-create-a-custom-code-list-with-a-custom-cds-view-in/ba-p/13511282" target="_blank" rel="noopener">
-          <span class="post-title">Key User Extensibility: create a custom code list with a custom CDS view<span class="post-date">Oct 2021</span></span>
-          <span class="bar" aria-hidden="true"><span style="width:70%"></span></span><span class="views">11,973</span></a></li>
-        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/simple-application-to-convert-number-to-words-in-sap-s-4hana-cloud/ba-p/13473950" target="_blank" rel="noopener">
-          <span class="post-title">Simple application to convert number to words in SAP S/4HANA Cloud<span class="post-date">Jul 2020</span></span>
-          <span class="bar" aria-hidden="true"><span style="width:63%"></span></span><span class="views">10,773</span></a></li>
-        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/release-assessment-and-scope-dependency-for-sap-s-4hana-cloud-public/ba-p/13652341" target="_blank" rel="noopener">
-          <span class="post-title">Release Assessment and Scope Dependency for SAP S/4HANA Cloud Public Edition<span class="post-date">Apr 2024</span></span>
-          <span class="bar" aria-hidden="true"><span style="width:61%"></span></span><span class="views">10,385</span></a></li>
-        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/extensibility-in-the-sap-s-4hana-cloud-extended-edition/ba-p/13465336" target="_blank" rel="noopener">
-          <span class="post-title">Extensibility in the SAP S/4HANA Cloud, extended edition<span class="post-date">Feb 2021</span></span>
-          <span class="bar" aria-hidden="true"><span style="width:51%"></span></span><span class="views">8,666</span></a></li>
-        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/setting-up-an-import-connection-setup-between-sap-s-4hana-cloud-and-sap/ba-p/13469513" target="_blank" rel="noopener">
-          <span class="post-title">Setting up an import connection between SAP S/4HANA Cloud and SAP S/4HANA<span class="post-date">Dec 2020</span></span>
-          <span class="bar" aria-hidden="true"><span style="width:49%"></span></span><span class="views">8,252</span></a></li>
-        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/release-assessment-and-scope-dependency-for-sap-s-4hana-cloud-public/ba-p/13981091" target="_blank" rel="noopener">
-          <span class="post-title">Release Assessment and Scope Dependency, 2025 edition<span class="post-date">Jan 2025</span></span>
-          <span class="bar" aria-hidden="true"><span style="width:28%"></span></span><span class="views">4,740</span></a></li>
-        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/replicate-documents-from-sap-s-4hana-to-sap-s-4hana-cloud-via-sap-btp-event/ba-p/13566416" target="_blank" rel="noopener">
-          <span class="post-title">Replicate documents from SAP S/4HANA to S/4HANA Cloud via SAP BTP Event Mesh<span class="post-date">May 2023</span></span>
-          <span class="bar" aria-hidden="true"><span style="width:27%"></span></span><span class="views">4,635</span></a></li>
-        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/object-release-state-in-cloudification-repository-viewer-for-clean-core/ba-p/14350668" target="_blank" rel="noopener">
-          <span class="post-title">Object release state in Cloudification Repository Viewer for Clean Core extensibility<span class="post-date">Mar 2026</span></span>
-          <span class="bar" aria-hidden="true"><span style="width:6%"></span></span><span class="views">1,052</span></a></li>
+        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/extensibility-in-sap-s-4hana-cloud/ba-p/13526826" target="_blank" rel="noopener"><span class="label">(2022)</span><span class="pt">Extensibility in SAP S/4HANA Cloud</span><span class="pv">16,984</span></a></li>
+        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/how-to-use-a-rest-api-to-post-data-into-sap-s-4hana-cloud-using-sap/ba-p/13515417" target="_blank" rel="noopener"><span class="label">(2021)</span><span class="pt">How to use a REST API to post data into SAP S/4HANA Cloud using SAP Intelligent RPA</span><span class="pv">12,413</span></a></li>
+        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/key-user-extensibility-create-a-custom-code-list-with-a-custom-cds-view-in/ba-p/13511282" target="_blank" rel="noopener"><span class="label">(2021)</span><span class="pt">Key User Extensibility: create a custom code list with a custom CDS view</span><span class="pv">11,973</span></a></li>
+        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/simple-application-to-convert-number-to-words-in-sap-s-4hana-cloud/ba-p/13473950" target="_blank" rel="noopener"><span class="label">(2020)</span><span class="pt">Simple application to convert number to words in SAP S/4HANA Cloud</span><span class="pv">10,773</span></a></li>
+        <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/release-assessment-and-scope-dependency-for-sap-s-4hana-cloud-public/ba-p/13652341" target="_blank" rel="noopener"><span class="label">(2024)</span><span class="pt">Release Assessment and Scope Dependency for SAP S/4HANA Cloud Public Edition</span><span class="pv">10,385</span></a></li>
+        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/object-release-state-in-cloudification-repository-viewer-for-clean-core/ba-p/14350668" target="_blank" rel="noopener"><span class="label">(2026)</span><span class="pt">Object release state in Cloudification Repository Viewer for Clean Core extensibility</span><span class="pv">1,052</span></a></li>
       </ul>
-      <div class="posts-foot">
-        <span>Views as of May 2026.</span>
-        <a href="https://community.sap.com/t5/user/viewprofilepage/user-id/824" target="_blank" rel="noopener">Read all 19 articles on SAP Community</a>
-      </div>
+      <a class="posts-all" href="https://community.sap.com/t5/user/viewprofilepage/user-id/824" target="_blank" rel="noopener">Read all 19 articles</a>
     </div>
   </section>
 
-  <!-- Skills and credentials -->
-  <section class="block" id="skills">
-    <div class="wrap">
-      <div class="block-head">
-        <h2>Skills, patent and certifications</h2>
-        <p>Product judgment from a decade inside SAP's platform, plus the hands-on engineering to build the tools myself.</p>
+  <!-- Skills and patent -->
+  <section class="skills" aria-label="Skills and patent">
+    <div class="w">
+      <h2 class="sec-head"><span>Skills</span><span class="label">(14 years)</span></h2>
+      <div class="skill-cols">
+        <div><h3>Agentic AI</h3><ul><li>Claude Code, skills, MCP servers</li><li>LLM APIs and prompt engineering</li><li>RAG and vector databases</li><li>LangGraph, FastAPI, React</li><li>Ollama, Hugging Face, SAP AI Core</li></ul></div>
+        <div><h3>Product</h3><ul><li>Product management and ownership</li><li>Roadmapping, Agile, Scrum</li><li>OKR coaching</li><li>UX design in Figma</li><li>Qualtrics, Jira, Miro, Notion</li></ul></div>
+        <div><h3>Enterprise platforms</h3><ul><li>SAP S/4HANA Cloud and BTP</li><li>RAP and Key User Extensibility</li><li>SAP Cloud Integration</li><li>SAP Process Automation</li><li>OO ABAP and Web Dynpro</li></ul></div>
       </div>
-
-      <div class="cols">
-        <div>
-          <h3>Agentic AI</h3>
-          <ul>
-            <li><strong>Claude Code, skills and MCP servers</strong></li>
-            <li><strong>LLM APIs and prompt engineering</strong></li>
-            <li><strong>RAG and vector databases</strong></li>
-            <li>SAP AI Core, Ollama, Hugging Face</li>
-            <li>GitHub Copilot, Lovable, Bolt, Replit</li>
-          </ul>
+      <div class="patent">
+        <div class="pc">
+          <span class="label">(Granted 2023)</span>
+          <h3>US patent 17/381,805</h3>
         </div>
-        <div>
-          <h3>Product</h3>
-          <ul>
-            <li><strong>Product management and ownership</strong></li>
-            <li>Roadmapping, Agile and Scrum</li>
-            <li>OKR coaching</li>
-            <li>UX design in Figma</li>
-            <li>Jira, Miro, Mural, Notion, Qualtrics</li>
-          </ul>
-        </div>
-        <div>
-          <h3>SAP platform</h3>
-          <ul>
-            <li><strong>SAP S/4HANA Cloud and SAP BTP</strong></li>
-            <li>RAP and Key User Extensibility</li>
-            <li>SAP Cloud Integration</li>
-            <li>SAP Process Automation</li>
-            <li>OO ABAP and Web Dynpro</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="creds">
-        <div class="card">
-          <h3>Certifications and languages</h3>
-          <dl>
-            <dt>Scrum Alliance</dt><dd>Certified Scrum Product Owner</dd>
-            <dt>SAP</dt><dd>Solution Architect, SAP BTP</dd>
-            <dt>Perplexity</dt><dd>AI Business Fellowship, batch 1</dd>
-            <dt>Languages</dt><dd>English, IELTS band 8.0 (C1)<span>Malayalam, native</span></dd>
-          </dl>
-        </div>
-        <div class="card patent">
-          <h3>US patent</h3>
-          <p class="pno">17/381,805</p>
-          <p><strong style="color:var(--ink)">Dynamic API bot for robotic process automation.</strong> Lets RPA bots discover and call APIs at runtime, so automation teams no longer configure each integration by hand. Filed July 2021, granted July 2023.</p>
+        <div class="pc">
+          <p class="lead-p">Dynamic API bot for robotic process automation. RPA bots discover and call APIs at runtime, so automation teams no longer configure each integration by hand.</p>
+          <p style="margin-top:16px;">Filed July 2021, granted July 2023.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="block contact" id="contact">
-    <div class="wrap contact-grid">
-      <div>
-        <h2>Let's talk about agents in enterprise products</h2>
-        <p>I'm open to AI-native product roles, SAP ecosystem work, advisory, and speaking about agentic workflows.</p>
+  <section class="contact light" id="contact">
+    <div class="w">
+      <div class="contact-grid">
+        <div>
+          <h2><a href="mailto:pra_santh@outlook.com">Let's build something with agents.</a></h2>
+          <p>Open to AI-native product roles, advisory work, and talks on agentic workflows. Based in Bangalore.</p>
+        </div>
+        <ul class="contact-links">
+          <li><a href="mailto:pra_santh@outlook.com">Email <span>pra_santh@outlook.com</span></a></li>
+          <li><a href="https://www.linkedin.com/in/prasanth-padmanabhan-menon" target="_blank" rel="noopener">LinkedIn <span>prasanth-padmanabhan-menon</span></a></li>
+          <li><a href="https://community.sap.com/t5/user/viewprofilepage/user-id/824" target="_blank" rel="noopener">SAP Community <span>PrasanthPadmanabhan</span></a></li>
+          <li><a href="tel:[removed]">Phone <span>[removed]</span></a></li>
+        </ul>
       </div>
-      <ul class="contact-links">
-        <li><a href="mailto:pra_santh@outlook.com">Email <span>pra_santh@outlook.com</span></a></li>
-        <li><a href="https://www.linkedin.com/in/prasanth-padmanabhan-menon" target="_blank" rel="noopener">LinkedIn <span>prasanth-padmanabhan-menon</span></a></li>
-        <li><a href="https://community.sap.com/t5/user/viewprofilepage/user-id/824" target="_blank" rel="noopener">SAP Community <span>PrasanthPadmanabhan</span></a></li>
-        <li><a href="tel:[removed]">Phone <span>[removed]</span></a></li>
-      </ul>
+    </div>
+    <div class="sign" aria-hidden="true">Prasanth Menon</div>
+    <div class="w">
+      <footer><span>© 2026 Prasanth Padmanabhan Menon</span><span>Bangalore, India</span></footer>
     </div>
   </section>
 
 </main>
-
-<footer>
-  <div class="wrap">
-    <p>© 2026 Prasanth Padmanabhan Menon</p>
-    <p>Bangalore, India</p>
-  </div>
-</footer>
-
 </body>
 </html>
